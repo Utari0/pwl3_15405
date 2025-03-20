@@ -34,6 +34,14 @@
 				$controller->show_data();
 				break;
 
+			case 'created-at' :
+				$controller->show_data();
+				break;
+
+			case 'deleted-at' :
+				$controller->show_data();
+				break;
+
 			default : 
 				$controller->index();
 				break;

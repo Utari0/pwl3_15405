@@ -5,5 +5,8 @@
             "Models\\": "app/Models",
             "Libraries\\": "app/Libraries"
        }
+    },
+    "require": {
+        "dompdf/dompdf": "^3.1"
     }
 }
