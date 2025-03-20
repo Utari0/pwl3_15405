@@ -15,7 +15,13 @@
 
 							foreach ($rs as $mahasiswa => $list)
 							{
-								echo '<tr><td><a href="?act=tampil-data&i='.$list['id'].'">'.$list['id'].'</a></td><td>'.$list['nim'].'</td><td>'.$list['nama'].'</td><td>'.$list['created_at'].'</td><td>'.$list['deleted_at'].'</td></tr>';
+								echo '<tr>
+								        <td><a href="?act=tampil-data&i='.$list['id'].'">'.$list['id'].'</a></td>
+								        <td>'.$list['nim'].'</td>
+										<td>'.$list['nama'].'</td>
+										<td>'.$list['created_at'].'</td>
+										<td>'.$list['deleted_at'].'</td>
+									  </tr>';
 							}
 
 						?>
