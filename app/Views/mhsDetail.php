@@ -14,7 +14,7 @@
 						echo 'id:' . $rs['id'] . '<br/>';
 						echo 'NIM:' . $rs['nim'] . '<br/>';
 						echo 'Nama:' . $rs['nama'] . '<br/>';
-						echo 'Create_at:' . $rs['create_at'] . '<br/>';
+						echo 'Created_at:' . $rs['created_at'] . '<br/>';
 						echo 'Deleted_at:' . $rs['deleted_at'] . '<br/>';
 
 					?>
