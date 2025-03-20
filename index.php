@@ -34,11 +34,11 @@
 				$controller->show_data();
 				break;
 
-			case 'created-at' :
+			case 'created_at' :
 				$controller->show_data();
 				break;
-
-			case 'deleted-at' :
+	
+			case 'deleted_at' :
 				$controller->show_data();
 				break;
 

@@ -10,25 +10,36 @@
 				<div class="col-md-4">&nbsp;</div>
 				<div class="col-md-4"><h3>Data Mahasiswa</h3>
 					<table class="table table-responsive table-bordered table-striped">
-						<tr><td>No</td><td>NIM</td><td>Nama</td><td>Created_at</td><td>Aksi</td></tr>
+						<tr>
+							<td>No</td>
+							<td>NIM</td>
+							<td>Nama</td>
+							<td>Created</td>
+							<td>Aksi</td>
+						</tr>
 						<?php 
 
-							foreach ($rs as $mahasiswa => $list)
-							{
-								echo '<tr>
-								        <td><a href="?act=tampil-data&i='.$list['id'].'">'.$list['id'].'</a></td>
-								        <td>'.$list['nim'].'</td>
-										<td>'.$list['nama'].'</td>
-										<td>'.$list['created_at'].'</td>
-										<td>'.$list['deleted_at'].'</td>
-									  </tr>';
-							}
+foreach ($rs as $mahasiswa => $list) {
+    // Hanya tampilkan data yang belum dihapus (deleted_at = null atau default)
+    if ($list['deleted_at'] === null || $list['deleted_at'] === '0000-00-00 00:00:00') {
+        echo '<tr>';
+        echo '<td><a href="?act=tampil-data&i=' . $list['id'] . '">' . $list['id'] . '</a></td>';
+        echo '<td>' . $list['nim'] . '</td>';
+        echo '<td>' . $list['nama'] . '</td>';
+        echo '<td>' . $list['created_at'] . '</td>';
+        echo '<td>';
+        echo '<a href="deleted_at.php?id=' . $list['id'] . '" class="btn btn-danger btn-sm" 
+              onclick="return confirm(\'Apakah Anda yakin ingin menghapus data ini?\');">Hapus</a>';
+        echo '</td>';
+        echo '</tr>';
+    }
+}
 
-						?>
-					</table>
-				</div>
-				<div class="col-md-4">&nbsp;</div>
+?>
+				</table>
 			</div>
+			<div class="col-md-4">&nbsp;</div>
+		</div>
 		</div>
 	</body>
 </html>
